@@ -1,5 +1,5 @@
 # TESI_2022
-Questo software permette di analizzare delle immagini pbm in formato P1. Il codice fa uso di librerie dello standard ISO/IEC 9899:1999 (alias C99).
+Questo software permette di analizzare delle immagini .pbm in formato P1. Il codice fa uso di librerie dello standard ISO/IEC 9899:1999 (alias C99).
 
 ## Come funziona
 Nelle cartelle src sono tenuti i codici sorgente, mentre nelle cartelle hdr gli header, due di questi introducono macro per la gestione degli errori ( err_mng.h ) e i tipi usati da più file sorgente ( types.h ).
@@ -28,3 +28,6 @@ Ad esempio nel file autoreA/immagine1.pbm in SORT_DISTANCE troviamo scritto:
     autoreA/immagine1.pbm 0.00000
     autoreB/immagine1.pbm 0.23456
     autoreB/immagine2.pbm 0.78900
+
+### Note sulle estensioni
+Tutti i file di output mantengono l'estensione del file originario, quindi se il file in input è con estensione pbm allora lo sarà anche in output.
