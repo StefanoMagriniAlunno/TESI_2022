@@ -18,8 +18,8 @@ int cmp_distance(const void* a, const void* b)
 {
 	double a_distance = ((t_key_d*)a)->distance;
 	double b_distance = ((t_key_d*)b)->distance;
-	if(a<b) return -1;
-	return a>b;
+	if(a_distance<b_distance) return -1;
+	return a_distance>b_distance;
 }
 void sort_sintex(const char* name_file_in)
 {
@@ -91,7 +91,7 @@ void sort_distance(const char* name_file_in, const size_t num_file)
 	{ // inizializzazione del vettore di chiavi
 		t_key_d* iter = VEC;
 		for(size_t i = 0;i<num_file;i++,iter++)
-	  		assert(fscanf(file_in,"%s \t%.15lf\n",iter->name_file,&(iter->distance))>=0,flag,end);
+	  		assert(fscanf(file_in,"%s \t%lf\n",iter->name_file,&(iter->distance))>=0,flag,end);
 	}
 	qsort(VEC,num_file,sizeof(t_key_d),cmp_distance);
 	for(size_t i=0;i<num_file;i++)

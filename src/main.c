@@ -15,9 +15,11 @@
 #include "../hdr/sintex.h"
 #include "../hdr/distance.h"
 #include "../hdr/sorting.h"
+#include "../hdr/evidence.h"
 #include "../hdr/err_mng.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 int main( int argc, char** argv )
 {
@@ -72,6 +74,15 @@ int main( int argc, char** argv )
     sort_distance(file[i],num_file);
   }
   assert(fprintf(stdout,"fase di sorting terminata>>\n\
+--------------------------------\n")>=0,flag,end);
+  ///fase di evidence
+  assert(fprintf(stdout,"<<fase di drawing in corso..\n")>=0,flag,end);
+  for(unsigned i = 0;i<num_file;i++)
+  {
+    assert(fprintf(stdout," :: file %s in elaborazione\n",file[i])>=0,flag,end);
+    evidence(file[i], SIZE_GRAM);
+  }
+  assert(fprintf(stdout,"fase di drawing terminata>>\n\
 --------------------------------\n")>=0,flag,end);
   ///termine del programma
   assert(fprintf(stdout,"programma terminato\n\

@@ -10,7 +10,7 @@
 
 void distance(const char* name_file_sub, const char* name_file_obj)
 {
-	report("%s", nome_file_obj);
+	report("%s", name_file_obj);
 	FILE *file_out = NULL,*file_sub =NULL,*file_obj=NULL;
 	{ // apro i file
 		char* percorso_out = (char*)calloc(FILENAME_MAX,sizeof(char));
@@ -86,7 +86,7 @@ void distance(const char* name_file_sub, const char* name_file_obj)
 	  	{
 	  		double freq_sub = (double)(iter_sub->occurrence)/format_sub.total;
 	  		double freq_obj = (double)(iter_obj->occurrence)/format_obj.total;
-			assert( freq_sub != 0 || freq_obj != 0, flag, stop);
+			// assert( freq_sub != 0 || freq_obj != 0, flag, stop);
 	  		double r = freq_sub < freq_obj ? freq_sub / freq_obj : freq_obj / freq_sub; // per evitare divisioni per 0 
 	  		r = (1-r) / (1+r); // 0 <= r <= 1, divisione poco suscettibile ad errori
 	  		out += r * r;
